@@ -1,0 +1,34 @@
+unit unit_main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ComCtrls, Vcl.ExtCtrls;
+
+type
+  Tfrm_name = class(TForm)
+    status_bar: TStatusBar;
+    main_menu: TMainMenu;
+    Arquivo1: TMenuItem;
+    Salvar1: TMenuItem;
+    Fechar1: TMenuItem;
+    fechar2: TMenuItem;
+    Cadastros1: TMenuItem;
+    Clientes1: TMenuItem;
+    Sair1: TMenuItem;
+    pnl_top: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_name: Tfrm_name;
+
+implementation
+
+{$R *.dfm}
+
+end.

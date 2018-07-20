@@ -1,0 +1,14 @@
+program sistema_clientes;
+
+uses
+  Vcl.Forms,
+  unit_main in 'source\unit_main.pas' {frm_name};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tfrm_name, frm_name);
+  Application.Run;
+end.

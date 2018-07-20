@@ -1,0 +1,5 @@
+* insert: https://pixabay.com/pt/s%C3%ADmbolo-gui-internet-2485372/
+* close: https://www.iconfinder.com/icons/2001866/blue_close_cross_exit_shadow_x_icon
+* remove: https://www.iconfinder.com/icons/2001871/blue_decrease_line_minus_shadow_subtract_takeaway_icon
+* search: https://www.iconfinder.com/icons/17955/find_magnifying_glass_search_zoom_icon
+* cancel: https://pixabay.com/pt/%C3%ADcone-bot%C3%A3o-s%C3%ADmbolo-inscreva-se-3447437/

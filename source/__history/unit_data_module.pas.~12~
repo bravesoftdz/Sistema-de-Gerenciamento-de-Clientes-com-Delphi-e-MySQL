@@ -1,0 +1,99 @@
+unit unit_data_module;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQLDef,
+  FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.MySQL, Data.DB,
+  FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.Comp.DataSet;
+
+type
+  Tfrm_data_module = class(TDataModule)
+    FDConnection1: TFDConnection;
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    tbl_clients: TFDTable;
+    DataSource1: TDataSource;
+    tbl_clientscliente_id: TFDAutoIncField;
+    tbl_clientscliente_nome: TStringField;
+    tbl_clientscliente_endereco: TStringField;
+    tbl_clientscliente_bairro: TStringField;
+    tbl_clientscliente_cidade: TStringField;
+    tbl_clientscliente_estado: TStringField;
+    tbl_clientscliente_rg: TStringField;
+    tbl_clientscliente_cpf: TStringField;
+    tbl_clientscliente_telefone: TStringField;
+    tbl_clientscliente_celular: TStringField;
+    tbl_clientscliente_data_nasc: TDateField;
+    tbl_clientscliente_data_cad: TDateField;
+    tbl_clientscliente_situacao: TStringField;
+    tbl_clientscliente_email: TStringField;
+    tbl_clientscliente_cep: TStringField;
+    tbl_clientscliente_num_residencia: TStringField;
+    sql_query_client: TFDQuery;
+    data_source_query_client: TDataSource;
+    sql_print_client: TFDQuery;
+    sql_query_clientcliente_id: TFDAutoIncField;
+    sql_query_clientcliente_nome: TStringField;
+    sql_query_clientcliente_endereco: TStringField;
+    sql_query_clientcliente_num_residencia: TStringField;
+    sql_query_clientcliente_cep: TStringField;
+    sql_query_clientcliente_bairro: TStringField;
+    sql_query_clientcliente_cidade: TStringField;
+    sql_query_clientcliente_estado: TStringField;
+    sql_query_clientcliente_rg: TStringField;
+    sql_query_clientcliente_cpf: TStringField;
+    sql_query_clientcliente_telefone: TStringField;
+    sql_query_clientcliente_celular: TStringField;
+    sql_query_clientcliente_email: TStringField;
+    sql_query_clientcliente_data_nasc: TDateField;
+    sql_query_clientcliente_data_cad: TDateField;
+    sql_query_clientcliente_situacao: TStringField;
+    sql_print_clientcliente_id: TFDAutoIncField;
+    sql_print_clientcliente_nome: TStringField;
+    sql_print_clientcliente_endereco: TStringField;
+    sql_print_clientcliente_num_residencia: TStringField;
+    sql_print_clientcliente_cep: TStringField;
+    sql_print_clientcliente_bairro: TStringField;
+    sql_print_clientcliente_cidade: TStringField;
+    sql_print_clientcliente_estado: TStringField;
+    sql_print_clientcliente_rg: TStringField;
+    sql_print_clientcliente_cpf: TStringField;
+    sql_print_clientcliente_telefone: TStringField;
+    sql_print_clientcliente_celular: TStringField;
+    sql_print_clientcliente_email: TStringField;
+    sql_print_clientcliente_data_nasc: TDateField;
+    sql_print_clientcliente_data_cad: TDateField;
+    sql_print_clientcliente_situacao: TStringField;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_data_module: Tfrm_data_module;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure Tfrm_data_module.DataModuleCreate(Sender: TObject);
+begin
+  FDConnection1.Params.DataBase := 'sistema-gerencia-clientes';
+  FDConnection1.Params.UserName := 'root';
+  FDConnection1.Params.PassWord := '';
+
+  FDConnection1.Connected := True;
+  FDPhysMySQLDriverLink1.VendorLib := GetCurrentDir + '\lib\libmySQL.dll';
+  tbl_clients.TableName := 'clientes';
+  tbl_clients.Active := True;
+end;
+
+end.

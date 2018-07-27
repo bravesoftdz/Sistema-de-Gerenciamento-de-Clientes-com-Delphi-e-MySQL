@@ -243,8 +243,8 @@ object frm_data_module: Tfrm_data_module
     Connection = FDConnection1
     SQL.Strings = (
       'select * from clientes')
-    Left = 368
-    Top = 168
+    Left = 128
+    Top = 256
     object sql_print_clientscliente_id: TFDAutoIncField
       FieldName = 'cliente_id'
       Origin = 'cliente_id'

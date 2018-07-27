@@ -3146,15 +3146,25 @@ object frm_clients_register: Tfrm_clients_register
     object tbl_clients_query: TTabSheet
       Caption = 'Consulta'
       ImageIndex = 1
+      ExplicitLeft = 8
+      ExplicitTop = 28
       object lbl_query: TLabel
-        Left = 360
+        Left = 311
         Top = 22
         Width = 97
         Height = 13
         Caption = 'Campo de Consulta:'
       end
+      object lbl_msg: TLabel
+        Left = 3
+        Top = 149
+        Width = 35
+        Height = 13
+        Caption = 'lbl_msg'
+        Visible = False
+      end
       object btn_return: TButton
-        Left = 522
+        Left = 554
         Top = 102
         Width = 75
         Height = 25
@@ -3164,9 +3174,9 @@ object frm_clients_register: Tfrm_clients_register
       end
       object DBGrid1: TDBGrid
         Left = 0
-        Top = 152
+        Top = 168
         Width = 696
-        Height = 261
+        Height = 245
         Align = alBottom
         Color = clWhite
         DataSource = frm_data_module.data_source_query_clients
@@ -3182,7 +3192,6 @@ object frm_clients_register: Tfrm_clients_register
             FieldName = 'cliente_id'
             Title.Alignment = taCenter
             Title.Caption = 'ID'
-            Width = 60
             Visible = True
           end
           item
@@ -3307,7 +3316,7 @@ object frm_clients_register: Tfrm_clients_register
           end>
       end
       object btn_print: TButton
-        Left = 441
+        Left = 473
         Top = 102
         Width = 75
         Height = 25
@@ -3315,7 +3324,7 @@ object frm_clients_register: Tfrm_clients_register
         TabOrder = 2
       end
       object btn_query: TButton
-        Left = 360
+        Left = 311
         Top = 102
         Width = 75
         Height = 25
@@ -3324,14 +3333,15 @@ object frm_clients_register: Tfrm_clients_register
         OnClick = btn_queryClick
       end
       object txt_query: TEdit
-        Left = 360
+        Left = 311
         Top = 41
-        Width = 237
+        Width = 318
         Height = 21
         TabOrder = 4
+        OnKeyPress = txt_queryKeyPress
       end
       object rg_options_query: TRadioGroup
-        Left = 96
+        Left = 52
         Top = 22
         Width = 237
         Height = 105
@@ -3351,13 +3361,22 @@ object frm_clients_register: Tfrm_clients_register
         OnClick = rg_options_queryClick
       end
       object DateTimePicker1: TDateTimePicker
-        Left = 360
+        Left = 311
         Top = 41
-        Width = 237
+        Width = 318
         Height = 21
         Date = 43300.628348310190000000
         Time = 43300.628348310190000000
         TabOrder = 6
+      end
+      object btn_show_all: TButton
+        Left = 392
+        Top = 102
+        Width = 75
+        Height = 25
+        Caption = 'Mostrar Tudo'
+        TabOrder = 7
+        OnClick = btn_show_allClick
       end
     end
   end

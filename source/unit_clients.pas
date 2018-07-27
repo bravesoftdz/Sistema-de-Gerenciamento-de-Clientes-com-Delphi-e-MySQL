@@ -67,6 +67,8 @@ type
     lbl_query: TLabel;
     rg_options_query: TRadioGroup;
     DateTimePicker1: TDateTimePicker;
+    lbl_msg: TLabel;
+    btn_show_all: TButton;
     procedure btn_insertClick(Sender: TObject);
     procedure btn_editClick(Sender: TObject);
     procedure btn_saveClick(Sender: TObject);
@@ -78,9 +80,12 @@ type
     procedure btn_returnClick(Sender: TObject);
     procedure rg_options_queryClick(Sender: TObject);
     procedure btn_queryClick(Sender: TObject);
+    procedure btn_show_allClick(Sender: TObject);
+    procedure txt_queryKeyPress(Sender: TObject; var Key: Char);
   private
     // ctrl + shift + c = criar procedimento:
     procedure SettingButtons;
+    procedure QuantityRegisters;
   public
     { Public declarations }
   end;
@@ -148,6 +153,7 @@ end;
 procedure Tfrm_clients_register.btn_queryClick(Sender: TObject);
 begin
 
+
   // verifica se o campo de consulta não esta vazio:
   if txt_query.Text = '' then
     begin
@@ -155,6 +161,7 @@ begin
       txt_query.SetFocus;
       exit;
     end;
+
 
   // passa mais de uma instrução ao mesmo objeto:
   with frm_data_module.sql_query_clients do
@@ -179,25 +186,28 @@ begin
 
       2:
       begin
-        SQL.Add('where cliente_id = :codigo');
-        ParamByName('codigo').Value := txt_query.Text;
+        SQL.Add('where cliente_rg = :rg');
+        ParamByName('rg').Value := txt_query.Text;
       end;
 
       3:
       begin
-        SQL.Add('where cliente_rg = :rg');
-        ParamByName('rg').Value := txt_query.Text;
+        SQL.Add('where cliente_cpf = :cpf');
+        ParamByName('cpf').Value := txt_query.Text;
       end;
 
       4:
       begin
         SQL.Add('where cliente_data_nasc = :data_nasc');
         ParamByName('data_nasc').AsDate := strToDate(formatDateTime('dd/mm/yyyy', DateTimePicker1.Date));
+        txt_query.Text := 'null';
       end;
 
     end;
 
     Open;
+
+    QuantityRegisters;
 
   end;
 
@@ -245,6 +255,24 @@ begin
 
   // habilita 'tabela' de consulta:
   tbl_clients_query.TabVisible := true;
+
+  // refresh no bd:
+  frm_data_module.sql_query_clients.Open;
+  frm_data_module.sql_query_clients.Refresh;
+  QuantityRegisters;
+
+end;
+
+procedure Tfrm_clients_register.btn_show_allClick(Sender: TObject);
+begin
+  frm_data_module.sql_query_clients.Close;
+  frm_data_module.sql_query_clients.SQL.Clear;
+  frm_data_module.sql_query_clients.SQL.Add('select * from clientes');
+  frm_data_module.sql_query_clients.Open;
+
+  QuantityRegisters;
+
+  btn_print.Enabled := true;
 end;
 
 procedure Tfrm_clients_register.btn_returnClick(Sender: TObject);
@@ -281,6 +309,42 @@ begin
 
   // desabilita o 'btn_query':
   btn_query.Enabled := false;
+end;
+
+procedure Tfrm_clients_register.QuantityRegisters;
+begin
+    // caso nao encontre clientes:
+    if frm_data_module.sql_query_clients.RecordCount = 0 then
+    begin
+      lbl_msg.Visible := true;
+      lbl_msg.Caption := '';
+      lbl_msg.Caption := 'Status: nenhum cliente encontrado.';
+
+      // desabilita o botao imprimir:
+      btn_print.Enabled := false;
+    end;
+
+    // caso encontre apenas 01 cliente:
+    if frm_data_module.sql_query_clients.RecordCount = 1 then
+    begin
+      lbl_msg.Visible := true;
+      lbl_msg.Caption := '';
+      lbl_msg.Caption := 'Status: 1 cliente encontrado.';
+
+      // habilita o botao imprimir:
+      btn_print.Enabled := true;
+    end;
+
+    // caso encontre mais de 01 cliente:
+    if frm_data_module.sql_query_clients.RecordCount > 1 then
+    begin
+      lbl_msg.Visible := true;
+      lbl_msg.Caption := '';
+      lbl_msg.Caption := 'Status: ' + IntToStr(frm_data_module.sql_query_clients.RecordCount) + ' clientes encontrados.';
+
+      // habilita o botao imprimir:
+      btn_print.Enabled := true;
+    end;
 
 end;
 
@@ -372,6 +436,44 @@ begin
   btn_save.Enabled := frm_data_module.tbl_clients.State in [dsinsert, dsedit];
   btn_cancel.Enabled := frm_data_module.tbl_clients.State in [dsinsert, dsedit];
 
+end;
+
+procedure Tfrm_clients_register.txt_queryKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+
+  case rg_options_query.ItemIndex of
+  0:
+  begin
+    if(key in ['0'..'9'] = false) and (word(key) <> VK_BACK) then
+    begin
+      ShowMessage('Este campo permite apenas a entrada de valores numéricos.');
+      // invalidar tecla:
+      key := #0;
+    end;
+  end;
+
+  2:
+  begin
+      if(key in ['0'..'9'] = false) and (word(key) <> VK_BACK) then
+    begin
+      ShowMessage('Este campo permite apenas a entrada de valores numéricos.');
+      // invalidar tecla:
+      key := #0;
+    end;
+  end;
+
+  3:
+  begin
+      if(key in ['0'..'9'] = false) and (word(key) <> VK_BACK) then
+    begin
+      ShowMessage('Este campo permite apenas a entrada de valores numéricos.');
+      // invalidar tecla:
+      key := #0;
+    end;
+  end;
+
+end;
 end;
 
 end.

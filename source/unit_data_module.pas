@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQLDef,
   FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.MySQL, Data.DB,
   FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
-  FireDAC.DApt, FireDAC.Comp.DataSet;
+  FireDAC.DApt, FireDAC.Comp.DataSet, frxClass, frxDBSet;
 
 type
   Tfrm_data_module = class(TDataModule)
@@ -68,6 +68,8 @@ type
     sql_print_clientscliente_data_nasc: TDateField;
     sql_print_clientscliente_data_cad: TDateField;
     sql_print_clientscliente_situacao: TStringField;
+    report_client: TfrxReport;
+    data_set_report_client: TfrxDBDataset;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

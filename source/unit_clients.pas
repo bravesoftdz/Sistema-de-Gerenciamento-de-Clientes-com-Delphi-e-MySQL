@@ -69,6 +69,7 @@ type
     DateTimePicker1: TDateTimePicker;
     lbl_msg: TLabel;
     btn_show_all: TButton;
+    txt_print: TEdit;
     procedure btn_insertClick(Sender: TObject);
     procedure btn_editClick(Sender: TObject);
     procedure btn_saveClick(Sender: TObject);
@@ -82,10 +83,15 @@ type
     procedure btn_queryClick(Sender: TObject);
     procedure btn_show_allClick(Sender: TObject);
     procedure txt_queryKeyPress(Sender: TObject; var Key: Char);
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure btn_printClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     // ctrl + shift + c = criar procedimento:
     procedure SettingButtons;
     procedure QuantityRegisters;
+    procedure DisableTextBox;
+    procedure EnableTextBox;
   public
     { Public declarations }
   end;
@@ -129,6 +135,9 @@ begin
 
   // chama a funcao que configura os botoes:
   SettingButtons;
+
+  // ativa as caixas de texto:
+  EnableTextBox;
 end;
 
 procedure Tfrm_clients_register.btn_insertClick(Sender: TObject);
@@ -148,6 +157,33 @@ begin
 
   // chama a funcao que configura os botoes:
   SettingButtons;
+
+  // ativa as caixas de texto:
+  EnableTextBox;
+end;
+
+procedure Tfrm_clients_register.btn_printClick(Sender: TObject);
+begin
+  with frm_data_module.sql_print_clients do
+  begin
+    Close;
+    SQL.Clear;
+
+    if txt_print.Text = '' then
+    begin
+      SQL.Add('select * from clientes');
+    end
+    else
+    begin
+      SQL.Add('select * from clientes where cliente_id = :codigo');
+      ParamByName('codigo').Value := strToInt(txt_print.Text);
+    end;
+
+    Open;
+    frm_data_module.report_client.LoadFromFile(GetCurrentDir + '\reports\report_client.fr3');
+    frm_data_module.report_client.ShowReport();
+
+  end;
 end;
 
 procedure Tfrm_clients_register.btn_queryClick(Sender: TObject);
@@ -216,12 +252,18 @@ end;
 procedure Tfrm_clients_register.btn_removeClick(Sender: TObject);
 begin
 
+  frm_data_module.sql_query_clients.Close;
+  frm_data_module.sql_query_clients.SQL.Clear;
+  frm_data_module.sql_query_clients.SQL.Add('select * from clientes where cliente_id = :codigo');
+  frm_data_module.sql_query_clients.ParamByName('codigo').Value := txt_id.Text;
+  frm_data_module.sql_query_clients.Open;
+
   // ao digitar 'case' + pressionar tab, cria a estrutura do case:
-  case Application.MessageBox('Deseja excluir o Registro do Cliente?', 'Exclusão de Cliente', MB_YESNO + MB_ICONQUESTION) of
+  case Application.MessageBox(('Deseja excluir o Cliente ?') , 'Exclusão de Cliente', MB_YESNO + MB_ICONQUESTION) of
     IDYES:
     begin
       // se sim, deleta o cliente:
-      frm_data_module.tbl_clients.Delete;
+      frm_data_module.sql_query_clients.Delete;
       ShowMessage('Cliente excluído com sucesso.');
     end;
 
@@ -251,10 +293,10 @@ begin
   PageControl1.TabIndex := 1;
 
   // desabilita 'tabela' de cadastro:
-  tbl_clients_register.TabVisible := false;
+  tbl_clients_register.TabVisible := False;
 
   // habilita 'tabela' de consulta:
-  tbl_clients_query.TabVisible := true;
+  tbl_clients_query.TabVisible := True;
 
   // refresh no bd:
   frm_data_module.sql_query_clients.Open;
@@ -272,7 +314,93 @@ begin
 
   QuantityRegisters;
 
-  btn_print.Enabled := true;
+  btn_print.Enabled := True;
+end;
+
+procedure Tfrm_clients_register.DBGrid1CellClick(Column: TColumn);
+begin
+  txt_print.Text := intToStr(frm_data_module.sql_query_clientscliente_id.Value);
+  btn_print.Enabled := True;
+end;
+
+procedure Tfrm_clients_register.DBGrid1DblClick(Sender: TObject);
+begin
+  PageControl1.TabIndex := 0;
+  tbl_clients_query.TabVisible := False;
+  tbl_clients_register.TabVisible := True;
+
+  txt_id.Text := intToStr(frm_data_module.sql_query_clientscliente_id.Value);
+  txt_data_cad.Text := dateToStr(frm_data_module.sql_query_clientscliente_data_cad.Value);
+
+  txt_nome.Text := frm_data_module.sql_query_clientscliente_nome.Value;
+  txt_rg.Text := frm_data_module.sql_query_clientscliente_rg.Value;
+  txt_cpf.Text := frm_data_module.sql_query_clientscliente_cpf.Value;
+  txt_data_nasc.Text := dateToStr(frm_data_module.sql_query_clientscliente_data_nasc.Value);
+
+  txt_endereco.Text := frm_data_module.sql_query_clientscliente_endereco.Value;
+  txt_num_residencia.Text := frm_data_module.sql_query_clientscliente_num_residencia.Value;
+  txt_cep.Text := frm_data_module.sql_query_clientscliente_cep.Value;
+  txt_bairro.Text := frm_data_module.sql_query_clientscliente_bairro.Value;
+  txt_cidade.Text := frm_data_module.sql_query_clientscliente_cidade.Value;
+  cb_estado.Text := frm_data_module.sql_query_clientscliente_estado.Value;
+
+  txt_telefone.Text := frm_data_module.sql_query_clientscliente_telefone.Value;
+  txt_celular.Text := frm_data_module.sql_query_clientscliente_celular.Value;
+  txt_email.Text := frm_data_module.sql_query_clientscliente_email.Value;
+
+  cb_situacao.Text := frm_data_module.sql_query_clientscliente_situacao.Value;
+
+  // desabilita as caixas de texto:
+  DisableTextBox;
+
+end;
+
+procedure Tfrm_clients_register.DisableTextBox;
+begin
+  txt_id.Enabled := False;
+  txt_data_cad.Enabled := False;
+
+  txt_nome.Enabled := False;
+  txt_rg.Enabled := False;
+  txt_cpf.Enabled := False;
+  txt_data_nasc.Enabled := False;
+
+  txt_endereco.Enabled := False;
+  txt_num_residencia.Enabled := False;
+  txt_cep.Enabled := False;
+  txt_bairro.Enabled := False;
+  txt_cidade.Enabled := False;
+  cb_estado.Enabled := False;
+
+  txt_telefone.Enabled := False;
+  txt_celular.Enabled := False;
+  txt_email.Enabled := False;
+
+  cb_situacao.Enabled := False;
+end;
+
+procedure Tfrm_clients_register.EnableTextBox;
+begin
+  txt_id.Enabled := True;
+  txt_data_cad.Enabled := True;
+
+  txt_nome.Enabled := True;
+  txt_rg.Enabled := True;
+  txt_cpf.Enabled := True;
+  txt_data_nasc.Enabled := True;
+
+  txt_endereco.Enabled := True;
+  txt_num_residencia.Enabled := True;
+  txt_cep.Enabled := True;
+  txt_bairro.Enabled := True;
+  txt_cidade.Enabled := True;
+  cb_estado.Enabled := True;
+
+  txt_telefone.Enabled := True;
+  txt_celular.Enabled := True;
+  txt_email.Enabled := True;
+
+  cb_situacao.Enabled := True;
 end;
 
 procedure Tfrm_clients_register.btn_returnClick(Sender: TObject);
@@ -290,22 +418,23 @@ end;
 procedure Tfrm_clients_register.FormCreate(Sender: TObject);
 begin
   PageControl1.TabIndex := 0;
-  tbl_clients_query.TabVisible := false;
+  tbl_clients_query.TabVisible := False;
 
-  btn_save.Enabled := false;
+  btn_save.Enabled := False;
+
   btn_cancel.Enabled := false;
 
   // desabilita a visualização do 'txt_query':
-  txt_query.Visible := false;
+  txt_query.Visible := False;
 
   // desabilita a visualização do 'lbl_query':
   lbl_query.Visible := false;
 
   // desabilita a visualização do 'DateTimePicker1':
-  DateTimePicker1.Visible := false;
+  DateTimePicker1.Visible := False;
 
   // desabilita o 'btn_print':
-  btn_print.Enabled := false;
+  btn_print.Enabled := False;
 
   // desabilita o 'btn_query':
   btn_query.Enabled := false;

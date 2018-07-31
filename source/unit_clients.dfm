@@ -2,9 +2,9 @@ object frm_clients_register: Tfrm_clients_register
   Left = 0
   Top = 0
   Caption = 'Cadastro de Clientes'
-  ClientHeight = 441
-  ClientWidth = 704
-  Color = clGradientInactiveCaption
+  ClientHeight = 511
+  ClientWidth = 774
+  Color = cl3DLight
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -18,123 +18,229 @@ object frm_clients_register: Tfrm_clients_register
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 704
-    Height = 441
-    ActivePage = tbl_clients_query
+    Width = 774
+    Height = 511
+    ActivePage = tbl_clients_register
     Align = alClient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNone
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     object tbl_clients_register: TTabSheet
       Caption = 'Cadastro'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ExplicitLeft = 28
+      ExplicitTop = 28
       object lbl_id: TLabel
-        Left = 24
-        Top = 24
-        Width = 15
+        Left = 80
+        Top = 18
+        Width = 16
         Height = 13
         Caption = 'ID:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_rg: TLabel
-        Left = 24
-        Top = 80
-        Width = 18
+        Left = 80
+        Top = 124
+        Width = 19
         Height = 13
         Caption = 'RG:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_cidade: TLabel
-        Left = 24
-        Top = 192
-        Width = 42
+        Left = 346
+        Top = 232
+        Width = 45
         Height = 13
         Caption = 'CIDADE:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_situacao: TLabel
-        Left = 536
-        Top = 248
-        Width = 56
+        Left = 80
+        Top = 355
+        Width = 61
         Height = 13
         Caption = 'SITUA'#199#195'O:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_nome: TLabel
-        Left = 280
-        Top = 24
-        Width = 90
+        Left = 80
+        Top = 80
+        Width = 96
         Height = 13
         Caption = 'NOME COMPLETO:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_endereco: TLabel
-        Left = 24
-        Top = 138
-        Width = 58
+        Left = 80
+        Top = 186
+        Width = 59
         Height = 13
         Caption = 'ENDERE'#199'O:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_bairro: TLabel
-        Left = 536
-        Top = 138
-        Width = 43
+        Left = 80
+        Top = 232
+        Width = 47
         Height = 13
         Caption = 'BAIRRO:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_cpf: TLabel
-        Left = 280
-        Top = 80
+        Left = 286
+        Top = 124
         Width = 23
         Height = 13
         Caption = 'CPF:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_data_nasc: TLabel
-        Left = 536
-        Top = 80
-        Width = 116
+        Left = 492
+        Top = 124
+        Width = 126
         Height = 13
         Caption = 'DATA DE NASCIMENTO:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_data_cad: TLabel
-        Left = 128
-        Top = 24
-        Width = 105
+        Left = 152
+        Top = 18
+        Width = 115
         Height = 13
         Caption = 'DATA DE CADASTRO:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_estado: TLabel
-        Left = 280
-        Top = 192
-        Width = 44
+        Left = 612
+        Top = 232
+        Width = 47
         Height = 13
         Caption = 'ESTADO:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_celular: TLabel
-        Left = 24
-        Top = 248
-        Width = 48
+        Left = 286
+        Top = 296
+        Width = 52
         Height = 13
         Caption = 'CELULAR:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_telefone: TLabel
-        Left = 424
-        Top = 192
-        Width = 54
+        Left = 80
+        Top = 296
+        Width = 55
         Height = 13
         Caption = 'TELEFONE:'
+        Color = clGradientInactiveCaption
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
       end
       object lbl_email: TLabel
-        Left = 280
-        Top = 248
-        Width = 38
+        Left = 492
+        Top = 296
+        Width = 43
         Height = 13
         Caption = 'E-MAIL:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object lbl_cep: TLabel
-        Left = 424
-        Top = 138
+        Left = 595
+        Top = 186
         Width = 23
         Height = 13
         Caption = 'CEP:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object btn_insert: TSpeedButton
-        Left = 88
-        Top = 314
-        Width = 64
-        Height = 64
+        Left = 61
+        Top = 416
+        Width = 85
+        Height = 35
         Cursor = crHandPoint
         Glyph.Data = {
           36300000424D3630000000000000360000002800000040000000400000000100
@@ -526,10 +632,10 @@ object frm_clients_register: Tfrm_clients_register
         OnClick = btn_insertClick
       end
       object btn_edit: TSpeedButton
-        Left = 158
-        Top = 314
-        Width = 64
-        Height = 64
+        Left = 152
+        Top = 416
+        Width = 85
+        Height = 35
         Cursor = crHandPoint
         Glyph.Data = {
           36300000424D3630000000000000360000002800000040000000400000000100
@@ -921,10 +1027,10 @@ object frm_clients_register: Tfrm_clients_register
         OnClick = btn_editClick
       end
       object btn_save: TSpeedButton
-        Left = 228
-        Top = 314
-        Width = 64
-        Height = 64
+        Left = 243
+        Top = 416
+        Width = 85
+        Height = 35
         Cursor = crHandPoint
         Glyph.Data = {
           36300000424D3630000000000000360000002800000040000000400000000100
@@ -1316,10 +1422,10 @@ object frm_clients_register: Tfrm_clients_register
         OnClick = btn_saveClick
       end
       object btn_remove: TSpeedButton
-        Left = 298
-        Top = 314
-        Width = 64
-        Height = 64
+        Left = 334
+        Top = 416
+        Width = 85
+        Height = 35
         Cursor = crHandPoint
         Glyph.Data = {
           36300000424D3630000000000000360000002800000040000000400000000100
@@ -1711,10 +1817,10 @@ object frm_clients_register: Tfrm_clients_register
         OnClick = btn_removeClick
       end
       object btn_cancel: TSpeedButton
-        Left = 368
-        Top = 314
-        Width = 64
-        Height = 64
+        Left = 425
+        Top = 416
+        Width = 85
+        Height = 35
         Cursor = crHandPoint
         Glyph.Data = {
           36300000424D3630000000000000360000002800000040000000400000000100
@@ -2106,10 +2212,10 @@ object frm_clients_register: Tfrm_clients_register
         OnClick = btn_cancelClick
       end
       object btn_close: TSpeedButton
-        Left = 438
-        Top = 314
-        Width = 64
-        Height = 64
+        Left = 516
+        Top = 416
+        Width = 85
+        Height = 35
         Cursor = crHandPoint
         Glyph.Data = {
           36300000424D3630000000000000360000002800000040000000400000000100
@@ -2501,10 +2607,10 @@ object frm_clients_register: Tfrm_clients_register
         OnClick = btn_closeClick
       end
       object btn_search: TSpeedButton
-        Left = 508
-        Top = 314
-        Width = 64
-        Height = 64
+        Left = 607
+        Top = 416
+        Width = 85
+        Height = 35
         Cursor = crHandPoint
         Glyph.Data = {
           36300000424D3630000000000000360000002800000040000000400000000100
@@ -2896,79 +3002,85 @@ object frm_clients_register: Tfrm_clients_register
         OnClick = btn_searchClick
       end
       object lbl_insert: TLabel
-        Left = 88
-        Top = 384
-        Width = 64
+        Left = 61
+        Top = 457
+        Width = 85
         Height = 13
         Alignment = taCenter
         AutoSize = False
         Caption = 'Adicionar'
       end
       object lbl_edit: TLabel
-        Left = 158
-        Top = 384
-        Width = 64
+        Left = 152
+        Top = 457
+        Width = 85
         Height = 13
         Alignment = taCenter
         AutoSize = False
         Caption = 'Editar'
       end
       object lbl_save: TLabel
-        Left = 228
-        Top = 384
-        Width = 64
+        Left = 243
+        Top = 457
+        Width = 85
         Height = 13
         Alignment = taCenter
         AutoSize = False
         Caption = 'Salvar'
       end
       object lbl_remove: TLabel
-        Left = 298
-        Top = 384
-        Width = 64
+        Left = 334
+        Top = 457
+        Width = 85
         Height = 13
         Alignment = taCenter
         AutoSize = False
         Caption = 'Remover'
       end
       object lbl_cancel: TLabel
-        Left = 368
-        Top = 384
-        Width = 64
+        Left = 425
+        Top = 457
+        Width = 85
         Height = 13
         Alignment = taCenter
         AutoSize = False
         Caption = 'Cancelar'
       end
       object lbl_close: TLabel
-        Left = 438
-        Top = 384
-        Width = 64
+        Left = 516
+        Top = 457
+        Width = 85
         Height = 13
         Alignment = taCenter
         AutoSize = False
         Caption = 'Fechar'
       end
       object lbl_search: TLabel
-        Left = 508
-        Top = 384
-        Width = 64
+        Left = 607
+        Top = 457
+        Width = 85
         Height = 13
         Alignment = taCenter
         AutoSize = False
         Caption = 'Procurar'
       end
       object lbl_num_residencia: TLabel
-        Left = 280
-        Top = 138
+        Left = 492
+        Top = 186
         Width = 16
         Height = 13
         Caption = 'N'#186':'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
       end
       object txt_id: TDBEdit
-        Left = 24
-        Top = 43
-        Width = 81
+        Left = 80
+        Top = 37
+        Width = 66
         Height = 21
         DataField = 'cliente_id'
         DataSource = frm_data_module.DataSource1
@@ -2976,53 +3088,53 @@ object frm_clients_register: Tfrm_clients_register
         TabOrder = 0
       end
       object txt_nome: TDBEdit
-        Left = 280
-        Top = 43
-        Width = 393
+        Left = 80
+        Top = 99
+        Width = 612
         Height = 21
         DataField = 'cliente_nome'
         DataSource = frm_data_module.DataSource1
         TabOrder = 2
       end
       object txt_rg: TDBEdit
-        Left = 24
-        Top = 99
-        Width = 234
+        Left = 80
+        Top = 143
+        Width = 200
         Height = 21
         DataField = 'cliente_rg'
         DataSource = frm_data_module.DataSource1
         TabOrder = 3
       end
       object txt_cpf: TDBEdit
-        Left = 280
-        Top = 99
-        Width = 234
+        Left = 286
+        Top = 143
+        Width = 200
         Height = 21
         DataField = 'cliente_cpf'
         DataSource = frm_data_module.DataSource1
         TabOrder = 4
       end
       object txt_data_nasc: TDBEdit
-        Left = 536
-        Top = 99
-        Width = 137
+        Left = 492
+        Top = 143
+        Width = 200
         Height = 21
         DataField = 'cliente_data_nasc'
         DataSource = frm_data_module.DataSource1
         TabOrder = 5
       end
       object txt_telefone: TDBEdit
-        Left = 424
-        Top = 211
-        Width = 249
+        Left = 80
+        Top = 315
+        Width = 200
         Height = 21
         DataField = 'cliente_telefone'
         DataSource = frm_data_module.DataSource1
         TabOrder = 12
       end
       object cb_situacao: TDBComboBox
-        Left = 536
-        Top = 267
+        Left = 80
+        Top = 374
         Width = 137
         Height = 21
         DataField = 'cliente_situacao'
@@ -3033,45 +3145,45 @@ object frm_clients_register: Tfrm_clients_register
         TabOrder = 15
       end
       object txt_bairro: TDBEdit
-        Left = 536
-        Top = 157
-        Width = 137
+        Left = 80
+        Top = 251
+        Width = 260
         Height = 21
         DataField = 'cliente_bairro'
         DataSource = frm_data_module.DataSource1
         TabOrder = 9
       end
       object txt_celular: TDBEdit
-        Left = 24
-        Top = 267
-        Width = 234
+        Left = 286
+        Top = 315
+        Width = 200
         Height = 21
         DataField = 'cliente_celular'
         DataSource = frm_data_module.DataSource1
         TabOrder = 13
       end
       object txt_cep: TDBEdit
-        Left = 424
-        Top = 157
-        Width = 90
+        Left = 595
+        Top = 205
+        Width = 97
         Height = 21
         DataField = 'cliente_cep'
         DataSource = frm_data_module.DataSource1
         TabOrder = 8
       end
       object txt_cidade: TDBEdit
-        Left = 24
-        Top = 211
-        Width = 234
+        Left = 346
+        Top = 251
+        Width = 260
         Height = 21
         DataField = 'cliente_cidade'
         DataSource = frm_data_module.DataSource1
         TabOrder = 10
       end
       object txt_data_cad: TDBEdit
-        Left = 128
-        Top = 43
-        Width = 130
+        Left = 152
+        Top = 37
+        Width = 128
         Height = 21
         DataField = 'cliente_data_cad'
         DataSource = frm_data_module.DataSource1
@@ -3079,36 +3191,36 @@ object frm_clients_register: Tfrm_clients_register
         TabOrder = 1
       end
       object txt_email: TDBEdit
-        Left = 280
-        Top = 267
-        Width = 234
+        Left = 492
+        Top = 315
+        Width = 200
         Height = 21
         DataField = 'cliente_email'
         DataSource = frm_data_module.DataSource1
         TabOrder = 14
       end
       object txt_endereco: TDBEdit
-        Left = 24
-        Top = 157
-        Width = 234
+        Left = 80
+        Top = 205
+        Width = 406
         Height = 21
         DataField = 'cliente_endereco'
         DataSource = frm_data_module.DataSource1
         TabOrder = 6
       end
       object txt_num_residencia: TDBEdit
-        Left = 280
-        Top = 157
-        Width = 121
+        Left = 492
+        Top = 205
+        Width = 97
         Height = 21
         DataField = 'cliente_num_residencia'
         DataSource = frm_data_module.DataSource1
         TabOrder = 7
       end
       object cb_estado: TDBComboBox
-        Left = 280
-        Top = 211
-        Width = 121
+        Left = 612
+        Top = 251
+        Width = 80
         Height = 21
         DataField = 'cliente_estado'
         DataSource = frm_data_module.DataSource1
@@ -3146,8 +3258,8 @@ object frm_clients_register: Tfrm_clients_register
     object tbl_clients_query: TTabSheet
       Caption = 'Consulta'
       ImageIndex = 1
-      ExplicitLeft = 8
-      ExplicitTop = 28
+      ExplicitWidth = 696
+      ExplicitHeight = 413
       object lbl_query: TLabel
         Left = 311
         Top = 22
@@ -3156,7 +3268,7 @@ object frm_clients_register: Tfrm_clients_register
         Caption = 'Campo de Consulta:'
       end
       object lbl_msg: TLabel
-        Left = 3
+        Left = 16
         Top = 149
         Width = 35
         Height = 13
@@ -3164,28 +3276,28 @@ object frm_clients_register: Tfrm_clients_register
         Visible = False
       end
       object btn_return: TButton
-        Left = 554
+        Left = 599
         Top = 102
-        Width = 75
+        Width = 90
         Height = 25
         Caption = 'Voltar'
         TabOrder = 0
         OnClick = btn_returnClick
       end
       object DBGrid1: TDBGrid
-        Left = 0
+        Left = 16
         Top = 168
-        Width = 696
-        Height = 245
-        Align = alBottom
-        Color = clWhite
+        Width = 729
+        Height = 297
         DataSource = frm_data_module.data_source_query_clients
         TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
+        TitleFont.Color = clNone
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        OnCellClick = DBGrid1CellClick
+        OnDblClick = DBGrid1DblClick
         Columns = <
           item
             Expanded = False
@@ -3316,17 +3428,19 @@ object frm_clients_register: Tfrm_clients_register
           end>
       end
       object btn_print: TButton
-        Left = 473
+        Left = 503
         Top = 102
-        Width = 75
+        Width = 90
         Height = 25
         Caption = 'Imprimir'
+        Enabled = False
         TabOrder = 2
+        OnClick = btn_printClick
       end
       object btn_query: TButton
         Left = 311
         Top = 102
-        Width = 75
+        Width = 90
         Height = 25
         Caption = 'Consultar'
         TabOrder = 3
@@ -3335,7 +3449,7 @@ object frm_clients_register: Tfrm_clients_register
       object txt_query: TEdit
         Left = 311
         Top = 41
-        Width = 318
+        Width = 378
         Height = 21
         TabOrder = 4
         OnKeyPress = txt_queryKeyPress
@@ -3363,20 +3477,29 @@ object frm_clients_register: Tfrm_clients_register
       object DateTimePicker1: TDateTimePicker
         Left = 311
         Top = 41
-        Width = 318
+        Width = 378
         Height = 21
         Date = 43300.628348310190000000
         Time = 43300.628348310190000000
         TabOrder = 6
       end
       object btn_show_all: TButton
-        Left = 392
+        Left = 407
         Top = 102
-        Width = 75
+        Width = 90
         Height = 25
         Caption = 'Mostrar Tudo'
         TabOrder = 7
         OnClick = btn_show_allClick
+      end
+      object txt_print: TEdit
+        Left = 503
+        Top = 75
+        Width = 90
+        Height = 21
+        Enabled = False
+        TabOrder = 8
+        Visible = False
       end
     end
   end

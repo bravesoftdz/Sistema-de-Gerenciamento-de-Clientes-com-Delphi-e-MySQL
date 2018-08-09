@@ -1,18 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>2018/07/17 11:50:34.000.481,=C:\Users\JAMESMARCELO\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018/07/17 11:54:53.000.371,C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\unit_main.pas=C:\Users\JAMESMARCELO\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018/07/17 11:54:53.000.371,C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\unit_main.dfm=C:\Users\JAMESMARCELO\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2018/07/17 11:56:28.000.813,C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\source\unit_main.dfm=C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\unit_main.dfm</Transaction>
-    <Transaction>2018/07/17 11:56:28.000.813,C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\source\unit_main.pas=C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\unit_main.pas</Transaction>
-    <Transaction>2018/07/17 11:57:05.000.650,C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\source\sistema_clientes.dproj=C:\Users\JAMESMARCELO\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2018/07/17 11:57:48.000.775,C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\sistema_clientes.dproj=C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\source\sistema_clientes.dproj</Transaction>
-    <Transaction>2018/07/17 12:34:00.000.663,=C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\Unit1.pas</Transaction>
-    <Transaction>2018/07/17 12:36:02.000.713,C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\source\unit_data_module.dfm=C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\Unit1.dfm</Transaction>
-    <Transaction>2018/07/17 12:36:02.000.713,C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\source\unit_data_module.pas=C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\Unit1.pas</Transaction>
-    <Transaction>2018/07/17 13:33:08.000.754,=C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\Unit1.pas</Transaction>
-    <Transaction>2018/07/17 13:33:37.000.153,C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\source\unit_clients.dfm=C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\Unit1.dfm</Transaction>
-    <Transaction>2018/07/17 13:33:37.000.153,C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\source\unit_clients.pas=C:\Users\JAMESMARCELO\Desktop\Sistema-de-Gerenciamento-de-Clientes\Unit1.pas</Transaction>
-  </Transactions>
-</BorlandProject>
+<BorlandProject/>

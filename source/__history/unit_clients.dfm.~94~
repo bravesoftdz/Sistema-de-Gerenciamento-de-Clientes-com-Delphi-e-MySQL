@@ -1,0 +1,693 @@
+object frm_clients_register: Tfrm_clients_register
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Clientes'
+  ClientHeight = 469
+  ClientWidth = 628
+  Color = cl3DLight
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 628
+    Height = 469
+    ActivePage = tbl_clients_register
+    Align = alClient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNone
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    object tbl_clients_register: TTabSheet
+      Caption = 'Cadastro'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ExplicitWidth = 644
+      ExplicitHeight = 458
+      object lbl_rg: TLabel
+        Left = 3
+        Top = 111
+        Width = 19
+        Height = 13
+        Caption = 'RG:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_cidade: TLabel
+        Left = 269
+        Top = 219
+        Width = 45
+        Height = 13
+        Caption = 'CIDADE:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_situacao: TLabel
+        Left = 3
+        Top = 340
+        Width = 61
+        Height = 13
+        Caption = 'SITUA'#199#195'O:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_nome: TLabel
+        Left = 3
+        Top = 65
+        Width = 96
+        Height = 13
+        Caption = 'NOME COMPLETO:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_endereco: TLabel
+        Left = 3
+        Top = 173
+        Width = 59
+        Height = 13
+        Caption = 'ENDERE'#199'O:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_bairro: TLabel
+        Left = 3
+        Top = 219
+        Width = 47
+        Height = 13
+        Caption = 'BAIRRO:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_cpf: TLabel
+        Left = 209
+        Top = 111
+        Width = 23
+        Height = 13
+        Caption = 'CPF:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_data_nasc: TLabel
+        Left = 415
+        Top = 111
+        Width = 126
+        Height = 13
+        Caption = 'DATA DE NASCIMENTO:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_data_cad: TLabel
+        Left = 75
+        Top = 3
+        Width = 63
+        Height = 13
+        Caption = 'DATA CAD.:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_estado: TLabel
+        Left = 535
+        Top = 218
+        Width = 47
+        Height = 13
+        Caption = 'ESTADO:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_celular: TLabel
+        Left = 209
+        Top = 278
+        Width = 52
+        Height = 13
+        Caption = 'CELULAR:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_telefone: TLabel
+        Left = 3
+        Top = 278
+        Width = 55
+        Height = 13
+        Caption = 'TELEFONE:'
+        Color = clGradientInactiveCaption
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lbl_email: TLabel
+        Left = 415
+        Top = 278
+        Width = 43
+        Height = 13
+        Caption = 'E-MAIL:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_cep: TLabel
+        Left = 518
+        Top = 173
+        Width = 23
+        Height = 13
+        Caption = 'CEP:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object btn_insert: TSpeedButton
+        Left = 3
+        Top = 402
+        Width = 70
+        Height = 35
+        Cursor = crHandPoint
+        Caption = 'Adicionar'
+        OnClick = btn_insertClick
+      end
+      object btn_edit: TSpeedButton
+        Left = 79
+        Top = 402
+        Width = 70
+        Height = 35
+        Cursor = crHandPoint
+        Caption = 'Editar'
+        OnClick = btn_editClick
+      end
+      object btn_save: TSpeedButton
+        Left = 155
+        Top = 402
+        Width = 70
+        Height = 35
+        Cursor = crHandPoint
+        Caption = 'Salvar'
+        OnClick = btn_saveClick
+      end
+      object btn_remove: TSpeedButton
+        Left = 231
+        Top = 402
+        Width = 70
+        Height = 35
+        Cursor = crHandPoint
+        Caption = 'Remover'
+        OnClick = btn_removeClick
+      end
+      object btn_cancel: TSpeedButton
+        Left = 471
+        Top = 403
+        Width = 70
+        Height = 35
+        Cursor = crHandPoint
+        Caption = 'Cancelar'
+        OnClick = btn_cancelClick
+      end
+      object btn_close: TSpeedButton
+        Left = 547
+        Top = 402
+        Width = 70
+        Height = 35
+        Cursor = crHandPoint
+        Caption = 'Sair'
+        OnClick = btn_closeClick
+      end
+      object btn_search: TSpeedButton
+        Left = 395
+        Top = 402
+        Width = 70
+        Height = 35
+        Cursor = crHandPoint
+        Caption = 'Procurar'
+        OnClick = btn_searchClick
+      end
+      object lbl_num_residencia: TLabel
+        Left = 415
+        Top = 173
+        Width = 16
+        Height = 13
+        Caption = 'N'#186':'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_txt: TLabel
+        Left = 3
+        Top = 3
+        Width = 63
+        Height = 13
+        Caption = 'DATA CAD.:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object txt_nome: TDBEdit
+        Left = 3
+        Top = 84
+        Width = 612
+        Height = 21
+        DataField = 'cliente_nome'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 1
+      end
+      object txt_rg: TDBEdit
+        Left = 3
+        Top = 130
+        Width = 200
+        Height = 21
+        DataField = 'cliente_rg'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 2
+      end
+      object txt_cpf: TDBEdit
+        Left = 209
+        Top = 130
+        Width = 200
+        Height = 21
+        DataField = 'cliente_cpf'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 3
+      end
+      object txt_data_nasc: TDBEdit
+        Left = 415
+        Top = 130
+        Width = 200
+        Height = 21
+        DataField = 'cliente_data_nasc'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 4
+      end
+      object txt_telefone: TDBEdit
+        Left = 3
+        Top = 297
+        Width = 200
+        Height = 21
+        DataField = 'cliente_telefone'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 11
+      end
+      object cb_situacao: TDBComboBox
+        Left = 3
+        Top = 359
+        Width = 137
+        Height = 21
+        DataField = 'cliente_situacao'
+        DataSource = frm_data_module.DataSource1
+        Items.Strings = (
+          'Ativo'
+          'Inativo')
+        TabOrder = 14
+      end
+      object txt_bairro: TDBEdit
+        Left = 3
+        Top = 235
+        Width = 260
+        Height = 21
+        DataField = 'cliente_bairro'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 8
+      end
+      object txt_celular: TDBEdit
+        Left = 209
+        Top = 297
+        Width = 200
+        Height = 21
+        DataField = 'cliente_celular'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 12
+      end
+      object txt_cep: TDBEdit
+        Left = 518
+        Top = 191
+        Width = 97
+        Height = 21
+        DataField = 'cliente_cep'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 7
+      end
+      object txt_cidade: TDBEdit
+        Left = 269
+        Top = 235
+        Width = 260
+        Height = 21
+        DataField = 'cliente_cidade'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 9
+      end
+      object txt_data_cad: TDBEdit
+        Left = 75
+        Top = 22
+        Width = 85
+        Height = 21
+        DataField = 'cliente_data_cad'
+        DataSource = frm_data_module.DataSource1
+        Enabled = False
+        TabOrder = 0
+      end
+      object txt_email: TDBEdit
+        Left = 415
+        Top = 297
+        Width = 200
+        Height = 21
+        DataField = 'cliente_email'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 13
+      end
+      object txt_endereco: TDBEdit
+        Left = 3
+        Top = 192
+        Width = 406
+        Height = 21
+        DataField = 'cliente_endereco'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 5
+      end
+      object txt_num_residencia: TDBEdit
+        Left = 415
+        Top = 191
+        Width = 97
+        Height = 21
+        DataField = 'cliente_num_residencia'
+        DataSource = frm_data_module.DataSource1
+        TabOrder = 6
+      end
+      object cb_estado: TDBComboBox
+        Left = 535
+        Top = 235
+        Width = 80
+        Height = 21
+        DataField = 'cliente_estado'
+        DataSource = frm_data_module.DataSource1
+        Items.Strings = (
+          'AC'
+          'AL'
+          'AP'
+          'AM'
+          'BA'
+          'CE'
+          'DF'
+          'ES'
+          'GO'
+          'MA'
+          'MT'
+          'MS'
+          'MG'
+          'PA'
+          'PB'
+          'PR'
+          'PE'
+          'PI'
+          'RJ'
+          'RN'
+          'RS'
+          'RO'
+          'RR'
+          'SC'
+          'SP'
+          'SE'
+          'TO')
+        TabOrder = 10
+      end
+      object txt_id: TDBEdit
+        Left = 3
+        Top = 22
+        Width = 66
+        Height = 21
+        DataField = 'cliente_id'
+        DataSource = frm_data_module.DataSource1
+        Enabled = False
+        TabOrder = 15
+      end
+    end
+    object tbl_clients_query: TTabSheet
+      Caption = 'Consulta'
+      ImageIndex = 1
+      ExplicitHeight = 425
+      object lbl_query: TLabel
+        Left = 246
+        Top = 6
+        Width = 97
+        Height = 13
+        Caption = 'Campo de Consulta:'
+      end
+      object lbl_msg: TLabel
+        Left = 3
+        Top = 111
+        Width = 35
+        Height = 13
+        Caption = 'lbl_msg'
+        Visible = False
+      end
+      object btn_return: TButton
+        Left = 342
+        Top = 80
+        Width = 90
+        Height = 25
+        Caption = 'Voltar'
+        TabOrder = 0
+        OnClick = btn_returnClick
+      end
+      object DBGrid1: TDBGrid
+        Left = 3
+        Top = 130
+        Width = 614
+        Height = 308
+        DataSource = frm_data_module.data_source_query_clients
+        TabOrder = 1
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clNone
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        OnCellClick = DBGrid1CellClick
+        OnDblClick = DBGrid1DblClick
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'cliente_id'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_nome'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_endereco'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_num_residencia'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_cep'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_bairro'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_cidade'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_estado'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_rg'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_cpf'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_telefone'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_celular'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_email'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_data_nasc'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_data_cad'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cliente_situacao'
+            Visible = True
+          end>
+      end
+      object btn_print: TButton
+        Left = 342
+        Top = 52
+        Width = 90
+        Height = 25
+        Caption = 'Imprimir'
+        Enabled = False
+        TabOrder = 2
+        OnClick = btn_printClick
+      end
+      object btn_query: TButton
+        Left = 246
+        Top = 52
+        Width = 90
+        Height = 25
+        Caption = 'Consultar'
+        TabOrder = 3
+        OnClick = btn_queryClick
+      end
+      object txt_query: TEdit
+        Left = 246
+        Top = 25
+        Width = 371
+        Height = 21
+        TabOrder = 4
+        OnKeyPress = txt_queryKeyPress
+      end
+      object rg_options_query: TRadioGroup
+        Left = 3
+        Top = 0
+        Width = 237
+        Height = 105
+        Caption = 'Op'#231#245'es de Consulta:'
+        Color = clWhite
+        Ctl3D = True
+        Items.Strings = (
+          'Por C'#243'digo'
+          'Por Nome'
+          'Por RG'
+          'Por CPF'
+          'Por Data de Nascimento')
+        ParentBackground = False
+        ParentColor = False
+        ParentCtl3D = False
+        TabOrder = 5
+        OnClick = rg_options_queryClick
+      end
+      object DateTimePicker1: TDateTimePicker
+        Left = 246
+        Top = 25
+        Width = 371
+        Height = 21
+        Date = 43300.628348310190000000
+        Time = 43300.628348310190000000
+        TabOrder = 6
+      end
+      object btn_show_all: TButton
+        Left = 246
+        Top = 80
+        Width = 90
+        Height = 25
+        Caption = 'Mostrar Tudo'
+        TabOrder = 7
+        OnClick = btn_show_allClick
+      end
+      object txt_print: TEdit
+        Left = 527
+        Top = 3
+        Width = 90
+        Height = 21
+        Enabled = False
+        TabOrder = 8
+        Visible = False
+      end
+    end
+  end
+end
